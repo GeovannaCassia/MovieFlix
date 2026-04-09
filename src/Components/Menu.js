@@ -20,6 +20,13 @@ function Menu() {
         fetchGenres()
     }, [])
 
+    const submit = () => {
+        const trimmed = query.current.value.trim();
+        if (!trimmed) return;
+        navigate(`/search?query=${encodeURIComponent(trimmed)}`);
+        query.current.value = '';
+    };
+
     return(
         <div className='flex items-center justify-between w-full px-4'>
             <img src={logo} width={70} height={70} className='m-2 cursor-pointer' onClick={() => navigate('/')} />
@@ -51,14 +58,12 @@ function Menu() {
                     placeholder='Digite um titulo...'
                     className='border border-red-600 bg-transparent rounded-full w-72 h-[36px] px-3'
                     ref={query}
+                    onKeyDown={(e) => { if (e.key === "Enter") submit(); }}
                 />
 
                 <button className='bg-red-600 p-2 rounded-md' 
-                    onClick={() => {
-                        const value = query.current.value;
-                        if (!value) return;
-                        navigate(`/search?query=${encodeURIComponent(value)}`);
-                }}>
+                    onClick={() => submit()}
+                >
                     <img src={search} width={15} height={15} />
                 </button>
             </div>
