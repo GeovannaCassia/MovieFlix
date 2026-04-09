@@ -20,8 +20,6 @@ function Menu() {
         fetchGenres()
     }, [])
 
-    console.log('genres', genres)
-
     return(
         <div className='flex items-center justify-between w-full px-4'>
             <img src={logo} width={70} height={70} className='m-2 cursor-pointer' onClick={() => navigate('/')} />

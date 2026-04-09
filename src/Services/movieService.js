@@ -45,6 +45,11 @@ export const getRecommendations = async (id) => {
     return response.data.results;
 }
 
+export const getVideoYoutube =  async (id) => {
+    const response = await api.get(`movie/${id}/videos?language=pt-BR`);
+    return response.data.results;
+}
+
 export const searchMovies = async (query) => {
   const response = await api.get(`/search/movie?language=pt-BR&query=${query}`);
   return response.data.results;

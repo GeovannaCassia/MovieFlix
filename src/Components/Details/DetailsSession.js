@@ -3,6 +3,7 @@ import { getYearOfRealesed } from "../../Utils/year";
 import { getFormatRuntime } from "../../Utils/runtime"
 
 import RatingStars from "./RatingStars";
+import TrailerMovie from "./TrailerMovie";
 
 function DetailsSession({movie}) {
 
@@ -15,7 +16,7 @@ function DetailsSession({movie}) {
     return(
         <>
             <div className="flex items-start gap-8 m-10 mb-16">
-                <img src={getImageUrl(movie.poster_path, 'w342')} className="rounded-lg" />
+                <img src={getImageUrl(movie.poster_path, 'w500')} className="rounded-lg" />
 
                 <div className="flex-1">
                     <h1 className="title">{movie?.title}</h1>
@@ -38,6 +39,8 @@ function DetailsSession({movie}) {
                     <div>
                         <button onClick={handleClick} className="rounded-full bg-red-600 px-6 h-[40px] mb-5">Assistir</button>
                     </div>
+
+                    <TrailerMovie movieId={movie?.id} backdropPath={movie?.backdrop_path} />
                 </div>
             </div>
         </>

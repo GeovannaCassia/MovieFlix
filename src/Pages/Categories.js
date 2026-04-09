@@ -18,8 +18,6 @@ function CategoriesPage () {
         if(id)
             fetchMovies()
     })
-
-    console.log("movies", movies)
  
     return(
         <>
