@@ -11,7 +11,6 @@ function TrailerMovie({ movieId, backdropPath }){
     useEffect(() => {
         const fetchMovieVideos = async () => {
             const response = await getVideoYoutube(movieId);
-                console.log("response", response)
             setMoviesVideos(response)
         }
 
@@ -26,9 +25,6 @@ function TrailerMovie({ movieId, backdropPath }){
         }
     }, [moviesVideos])
 
-    
-    console.log("dados do video", moviesVideos)
-    console.log("link", link)
 
     return (
         link && (

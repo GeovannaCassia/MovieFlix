@@ -54,3 +54,11 @@ export const searchMovies = async (query) => {
   const response = await api.get(`/search/movie?language=pt-BR&query=${query}`);
   return response.data.results;
 };
+
+export const getSeveralMovies = async (ids) => {
+    const movies = await Promise.all(
+        ids.map(id => api.get(`/movie/${id}?language=pt-BR`))
+    );
+
+    return movies.map((response) => response.data);
+};

@@ -1,4 +1,4 @@
-import { getMoviesTopRated, getMoviesTrending, getMoviesUpcoming, getPopularMovies } from '../Services/movieService';
+import { getMoviesTopRated, getMoviesTrending, getMoviesUpcoming, getPopularMovies, getSeveralMovies } from '../Services/movieService';
 
 import Carrossel from '../Components/Home/Carrossel';
 import Cards from '../Components/ListCards';
@@ -11,6 +11,7 @@ function HomePage () {
     const [topMovies, setTopRated] = useState([]);
     const [upcomingMovies, setUpcomigMovies] = useState([]);
     const [trendingMovies, setTredingMovies] = useState([]);
+    const [favoriteMovies, setFavoriteMovies] = useState([])
 
     useEffect(() => {
         const fetchMovies = async() => {
@@ -33,10 +34,22 @@ function HomePage () {
             setTredingMovies(response);
         }
 
+        const getMoviesLocalStorage = async () => {
+            const stored = localStorage.getItem('favorites');
+
+            if (!stored) return [];
+
+            const ids = JSON.parse(stored);
+
+            const response = await getSeveralMovies(ids);
+            setFavoriteMovies(response);
+        }
+
         fetchMovies();
         fetchTopRatedMovies();
         fetcUpcomingMovies();
         fetchTredingMovies();
+        getMoviesLocalStorage();
     }, [])
 
     return(
@@ -44,6 +57,7 @@ function HomePage () {
             <Menu />
             <Carrossel movies={popularMovies} />
             <Cards sessionTitle="Tendências desta semana" movies={trendingMovies} />
+            <Cards sessionTitle="Minha lista" movies={favoriteMovies} />
             <Cards sessionTitle="Melhor avaliados" movies={topMovies} />
             <Cards sessionTitle="Em breve" movies={upcomingMovies} />
         </>
