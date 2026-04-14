@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+
 import { getImageUrl } from "../Utils/image";
 
 function Card({movie}) {

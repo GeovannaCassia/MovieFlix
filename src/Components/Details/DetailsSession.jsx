@@ -1,12 +1,12 @@
+import { useEffect, useState } from "react";
+import { Heart } from "lucide-react"
+
 import { getImageUrl } from "../../Utils/image"
 import { getYearOfRealesed } from "../../Utils/year"
 import { getFormatRuntime } from "../../Utils/runtime"
 
-import { Heart } from "lucide-react"
-
 import RatingStars from "./RatingStars";
 import TrailerMovie from "./TrailerMovie";
-import { useEffect, useState } from "react";
 
 function DetailsSession({movie}) {
     const [favorite, setFavorite] = useState(false);
@@ -65,7 +65,7 @@ function DetailsSession({movie}) {
 
     return(
         <>
-            <div className="flex items-start gap-8 m-10 mb-16">
+            <div className="flex items-start gap-8 m-7">
                 <img src={getImageUrl(movie.poster_path, 'w500')} className="rounded-lg" />
 
                 <div className="flex-1">

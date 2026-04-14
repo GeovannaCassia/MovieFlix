@@ -1,8 +1,8 @@
-import logo from '../../Assets/img/Logo_MovieFlix_cortada.png';
-import search from '../../Assets/icons/magnifying-glass.png'
-
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+
+import logo from '../../Assets/img/Logo_MovieFlix_cortada.png';
+import search from '../../Assets/icons/magnifying-glass.png'
 
 function SearchBar({ query = "", onQueryChange = () => {} }) {
     const navigate = useNavigate();

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { getMoviesOfCategory } from "../Services/movieService"
+
 import ListResults from "../Components/Search/ListResult"
 import Menu from "../Components/Menu"
 

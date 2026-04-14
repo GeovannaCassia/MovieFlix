@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+
 import { getStars } from "../../Utils/stars";
 
 function RatingStars({ vote }){

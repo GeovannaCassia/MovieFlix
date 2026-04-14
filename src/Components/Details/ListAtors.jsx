@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
 
 import { getAtors } from "../../Services/movieService";
+
 import { getImageUrl } from "../../Utils/image";
 
 function ListAtors({ id }) {

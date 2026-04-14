@@ -1,8 +1,9 @@
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+
 import logo from '../Assets/img/Logo_MovieFlix_cortada.png';
 import search from '../Assets/icons/magnifying-glass.png'
 
-import { useNavigate } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
 import { getListOfGenres } from '../Services/movieService';
 
 function Menu() {
