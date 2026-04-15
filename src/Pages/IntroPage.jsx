@@ -8,16 +8,16 @@ function AnimateIntroPage () {
     return (
         <section className='flex flex-col h-screen items-center justify-center gap-6'>
             <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 1.2 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <img src={imgMovie} className="h-[250px] w-[250px]" />
             </motion.div>
 
             <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 60, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ delay: 0.8, duration: 1 }}
             >
                 <div className='text-8xl intro flex'>
@@ -28,18 +28,26 @@ function AnimateIntroPage () {
 
             <motion.button
                 className='bg-red-600 rounded-full text-2xl px-9 py-2 text-white'
-                animate={{ y: [0, -6, 0] }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ 
+                    opacity: 1, 
+                    scale: 1,
+                    y: [0, -6, 0]
+                }}
                 transition={{
                     delay: 2,
-                    duration: 1,
-                    repeat: Infinity,
-                    ease: "easeInOut"
+                    duration: 0.8,
+                    y: {
+                        delay: 2.2,
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }
                 }}
                 onClick={() => navigate("/home")}
             >
                 Começar
             </motion.button>
-
         </section>
     );
 }
