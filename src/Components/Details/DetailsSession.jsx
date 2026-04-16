@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Heart } from "lucide-react"
+import { Heart, Clapperboard } from "lucide-react"
 
 import { getImageUrl } from "../../Utils/image"
 import { getYearOfRealesed } from "../../Utils/year"
@@ -65,11 +65,11 @@ function DetailsSession({movie}) {
 
     return(
         <>
-            <div className="flex items-start gap-8 m-7">
+            <div className="flex flex-col lg:flex-row items-start gap-8 lg:m-7 mx-2">
                 <img src={getImageUrl(movie.poster_path, 'w500')} className="rounded-lg" />
 
                 <div className="flex-1">
-                    <h1 className="title">{movie?.title}</h1>
+                    <h1 className="title text-2xl">{movie?.title}</h1>
                     <p className="mb-1 text-gray-500">{getYearOfRealesed(movie.release_date)} {getFormatRuntime(movie.runtime)}</p>
 
                     <div className="flex items-center gap-2 mb-6">
@@ -79,16 +79,26 @@ function DetailsSession({movie}) {
                         </span>
                     </div>
 
-                    <div className="mb-5">
+                    <div className="flex flex-wrap gap-2 mb-5">
                         {(movie.genres || []).map((item) => (
-                            <span key={item.id} className="mr-2 py-1 px-3 rounded-full border border-red-600">{item.name}</span>
+                            <span 
+                            key={item.id}
+                            className="py-1 px-3 rounded-full border border-red-600 whitespace-nowrap"
+                            >
+                            {item.name}
+                            </span>
                         ))}
                     </div>
 
                     <p className="description mb-5">{movie?.overview}</p>
 
                     <div className="flex items-center gap-2 mb-4">
-                        <button onClick={handleClick} className="rounded-full bg-red-600 px-6 h-[40px]">Assistir</button>
+                        {movie?.homepage &&
+                            <button onClick={handleClick} className="rounded-full bg-red-600 px-6 h-[40px] flex items-center justify-center">
+                                <Clapperboard className="mr-2"/>
+                                Onde Assistir?
+                            </button>
+                        }
 
                         <button onClick={() => favorite ? removeFavorite() : addFavorite()} className="rounded-full bg-red-600 px-5 h-[40px] mx-2 flex items-center justify-center gap-2">
                             <Heart fill={ favorite ? "white" : "none"} color="white"/>

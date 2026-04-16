@@ -19,14 +19,18 @@ function SearchBar({ query = "", onQueryChange = () => {} }) {
     };
 
     return (
-        <div className='flex w-full px-4'>
-            <img src={logo} width={70} height={70} className='m-2 cursor-pointer' onClick={() => navigate('/')}/>
+        <div className='flex flex-col md:flex-row items-center md:items-center w-full px-4 gap-3'>
+            <img 
+                src={logo} 
+                className='w-14 md:w-[70px] cursor-pointer' 
+                onClick={() => navigate('/')}
+            />
 
-            <div className='flex items-center gap-2 mx-auto'>
+            <div className='flex items-center gap-2 w-full md:w-auto lg:mx-auto justify-center'>
                 <input
                     type='search'
                     placeholder='Digite um titulo...'
-                    className='border border-red-600 bg-transparent rounded-full w-96 h-[36px] px-5'
+                    className='border border-red-600 bg-transparent rounded-full w-full md:w-96 h-[36px] px-5'
                     value={value}
                     onChange={(e) => {
                         const next = e.target.value;
@@ -36,8 +40,11 @@ function SearchBar({ query = "", onQueryChange = () => {} }) {
                     onKeyDown={(e) => { if (e.key === "Enter") submit(); }}
                 />
 
-                <button className='bg-red-600 p-2 rounded-md' onClick={submit}>
-                    <img src={search} width={15} height={15} />
+                <button 
+                    className='bg-red-600 p-2 rounded-md flex items-center justify-center'
+                    onClick={submit}
+                >
+                    <img src={search} className='w-4 h-4' />
                 </button>
             </div>
         </div>

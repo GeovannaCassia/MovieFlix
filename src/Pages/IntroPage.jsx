@@ -12,7 +12,7 @@ function AnimateIntroPage () {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
-                <img src={imgMovie} className="h-[250px] w-[250px]" />
+                <img src={imgMovie} className="lg:h-[250px] lg:w-[250px] h-[180px] w-[180px]" />
             </motion.div>
 
             <motion.div
@@ -20,14 +20,14 @@ function AnimateIntroPage () {
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ delay: 0.8, duration: 1 }}
             >
-                <div className='text-8xl intro flex'>
+                <div className='lg:text-8xl text-5xl intro flex'>
                     <h1 className='text-red-600'>Movie</h1>
                     <h1 className='text-white'>Flix</h1>
                 </div>
             </motion.div>
 
             <motion.button
-                className='bg-red-600 rounded-full text-2xl px-9 py-2 text-white'
+                className='bg-red-600 rounded-full text-2xl px-9 pt-1 pb-2 text-white'
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ 
                     opacity: 1, 

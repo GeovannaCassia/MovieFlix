@@ -3,16 +3,14 @@ import Card from "../Card";
 function ListResults({ movies, search, genre }) {
   return (
     <div>
-        {search && <p className="title my-4 mx-28">Resultados para "{search}"</p>}
-        {genre && <p className="title my-4 mx-28"> Filmes de {genre}</p>}
-        <div className="flex flex-wrap justify-center gap-2">
+        {search && <p className="title text-2xl lg:text-3xl my-4 lg:mx-28 mx-4">Resultados para "{search}"</p>}
+        {genre && <p className="title text-2xl lg:text-3xl my-4 lg:mx-28 mx-4"> Filmes de {genre}</p>}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6 gap-3 px-4 lg:px-28">
             {(movies || []).map((movie) => (
-                <div
+                <Card
                     key={movie.id || movie.imdbID || movie.title}
-                    className="w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 p-1"
-                >
-                    <Card movie={movie} />
-                </div>
+                    movie={movie}
+                />
             ))}
         </div>
     </div>

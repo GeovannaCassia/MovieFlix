@@ -15,11 +15,11 @@ function Carrossel({ movies }) {
                 {(movies || []).map((item) => (
                     <SwiperSlide key={item.id}>
                         <div className="relative" onClick={() => navigate(`/details/${item.id}`)}>
-                            <img src={getImageUrl(item.backdrop_path)} className="w-[100%] h-[550px] object-cover" />
+                            <img src={getImageUrl(item.backdrop_path)} className="w-[100%] lg:h-[550px] h-[350px] object-cover" />
 
                             <div className="overlay">
-                                <h3 className='title'>{item.title}</h3>
-                                <p className='description'>{item.overview}</p>
+                                <h3 className='title text-4xl'>{item.title}</h3>
+                                <p className='description sr-only sm:not-sr-only'>{item.overview}</p>
                             </div>
                         </div>
                     </SwiperSlide>
