@@ -58,7 +58,7 @@ function HomePage () {
             <Menu />
             <Carrossel movies={popularMovies} />
             <Cards sessionTitle="Tendências desta semana" movies={trendingMovies} />
-            <Cards sessionTitle="Minha lista" movies={favoriteMovies}/>
+            {favoriteMovies?.length > 0 && <Cards sessionTitle="Minha lista" movies={favoriteMovies}/>}
             <Cards sessionTitle="Melhor avaliados" movies={topMovies} />
             <Cards sessionTitle="Em breve" movies={upcomingMovies} />
             <Footer />
