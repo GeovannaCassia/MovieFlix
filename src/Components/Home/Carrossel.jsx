@@ -2,6 +2,8 @@ import '../../Styles/Carrossel.css'
 import { getImageUrl } from '../../Utils/image';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+
 import { useNavigate } from "react-router-dom";
 
 function Carrossel({ movies }) {
@@ -10,7 +12,12 @@ function Carrossel({ movies }) {
         <div className="carrossel w-[100%]">
             <Swiper
                 slidesPerView={1}
-                navigation
+                modules={[Autoplay]}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                }}
+                loop={true}
             >
                 {(movies || []).map((item) => (
                     <SwiperSlide key={item.id}>

@@ -23,7 +23,7 @@ function SearchBar({ query = "", onQueryChange = () => {} }) {
             <img 
                 src={logo} 
                 className='w-14 md:w-[70px] cursor-pointer' 
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/home')}
             />
 
             <div className='flex items-center gap-2 w-full md:w-auto lg:mx-auto justify-center'>

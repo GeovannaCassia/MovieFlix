@@ -7,6 +7,7 @@ import ListCard from '../Components/ListCards';
 import DetailsSession from "../Components/Details/DetailsSession";
 import Menu from "../Components/Menu";
 import ListAtors from "../Components/Details/ListAtors";
+import Footer from "../Components/Footer";
 
 function DetailsPage () {
     const { id } = useParams();
@@ -36,6 +37,7 @@ function DetailsPage () {
             <DetailsSession movie={movie} />
             <ListAtors id={id} />
             <ListCard sessionTitle="Recomendações para você" movies={recommendations} />
+            <Footer /> 
         </>
     )
 };

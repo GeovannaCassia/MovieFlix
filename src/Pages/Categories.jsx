@@ -5,6 +5,7 @@ import { getMoviesOfCategory } from "../Services/movieService"
 
 import ListResults from "../Components/Search/ListResult"
 import Menu from "../Components/Menu"
+import Footer from "../Components/Footer";
 
 function CategoriesPage () {
     const { id, genre } = useParams();
@@ -24,6 +25,7 @@ function CategoriesPage () {
         <>
             <Menu />
             <ListResults movies={movies} genre={genre} />
+            <Footer />
         </>
     )
 };

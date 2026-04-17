@@ -29,7 +29,7 @@ function Menu() {
     };
 
     return(
-        <div className='flex flex-col md:flex-row items-center justify-between w-full px-4 gap-3'>
+        <div className='flex flex-col md:flex-row items-center justify-between w-full px-4 gap-3 lg:mb-2'>
             <img 
                 src={logo} 
                 className='w-14 md:w-[70px] cursor-pointer' 

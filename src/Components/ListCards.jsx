@@ -5,7 +5,7 @@ import Card from './Card';
 function Cards({sessionTitle, movies}){
     return(
         <>
-            <h1 className="title lg:text-3xl text-2xl mx-3 my-7">{sessionTitle}</h1>
+            <h1 className="title lg:text-3xl text-2xl mx-3 my-7" id={sessionTitle.replace(/\s+/g, '')}>{sessionTitle}</h1>
 
             <div>
                 <Swiper

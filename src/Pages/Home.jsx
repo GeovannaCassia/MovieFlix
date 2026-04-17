@@ -3,6 +3,7 @@ import { getMoviesTopRated, getMoviesTrending, getMoviesUpcoming, getPopularMovi
 import Carrossel from '../Components/Home/Carrossel';
 import Cards from '../Components/ListCards';
 import Menu from '../Components/Menu';
+import Footer from '../Components/Footer';
 
 import { useState, useEffect } from 'react';
 
@@ -11,7 +12,7 @@ function HomePage () {
     const [topMovies, setTopRated] = useState([]);
     const [upcomingMovies, setUpcomigMovies] = useState([]);
     const [trendingMovies, setTredingMovies] = useState([]);
-    const [favoriteMovies, setFavoriteMovies] = useState([])
+    const [favoriteMovies, setFavoriteMovies] = useState([]);
 
     useEffect(() => {
         const fetchMovies = async() => {
@@ -57,9 +58,10 @@ function HomePage () {
             <Menu />
             <Carrossel movies={popularMovies} />
             <Cards sessionTitle="Tendências desta semana" movies={trendingMovies} />
-            <Cards sessionTitle="Minha lista" movies={favoriteMovies} />
+            <Cards sessionTitle="Minha lista" movies={favoriteMovies}/>
             <Cards sessionTitle="Melhor avaliados" movies={topMovies} />
             <Cards sessionTitle="Em breve" movies={upcomingMovies} />
+            <Footer />
         </>
     )
 };
