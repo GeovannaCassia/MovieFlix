@@ -37,7 +37,7 @@ function SearchPage() {
 
         <main className="flex-1">
           {
-            movies == null ?
+            query ?
               <ListResults movies={movies} search={query} />
               :
               <div className="flex flex-col items-center justify-center h-full text-center mt-16">

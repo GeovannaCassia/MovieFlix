@@ -62,7 +62,7 @@ function Menu() {
                 <input
                     type='search'
                     placeholder='Digite um título...'
-                    className='border border-red-600 bg-transparent rounded-full w-full md:w-72 h-[36px] px-3'
+                    className='border-2 border-red-600 bg-transparent rounded-full w-full md:w-72 h-[36px] px-3'
                     ref={query}
                     onKeyDown={(e) => { if (e.key === "Enter") submit(); }}
                 />

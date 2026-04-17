@@ -30,7 +30,7 @@ function SearchBar({ query = "", onQueryChange = () => {} }) {
                 <input
                     type='search'
                     placeholder='Digite um titulo...'
-                    className='border border-red-600 bg-transparent rounded-full w-full md:w-96 h-[36px] px-5'
+                    className='border-2 border-red-600 bg-transparent rounded-full w-full md:w-96 h-[36px] px-5'
                     value={value}
                     onChange={(e) => {
                         const next = e.target.value;
