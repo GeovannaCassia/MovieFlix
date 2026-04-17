@@ -66,7 +66,11 @@ function DetailsSession({movie}) {
     return(
         <>
             <div className="flex flex-col lg:flex-row items-start gap-8 lg:m-7 mx-2">
-                <img src={getImageUrl(movie.poster_path, 'w500')} className="rounded-lg" />
+                <img 
+                    src={getImageUrl(movie.poster_path, 'w500')}
+                    alt="Poster do filme"
+                    className="rounded-lg" 
+                />
 
                 <div className="flex-1">
                     <h1 className="title text-2xl">{movie?.title}</h1>

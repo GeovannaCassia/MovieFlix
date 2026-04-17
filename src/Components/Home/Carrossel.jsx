@@ -22,7 +22,11 @@ function Carrossel({ movies }) {
                 {(movies || []).map((item) => (
                     <SwiperSlide key={item.id}>
                         <div className="relative" onClick={() => navigate(`/details/${item.id}`)}>
-                            <img src={getImageUrl(item.backdrop_path)} className="w-[100%] lg:h-[550px] h-[350px] object-cover" />
+                            <img 
+                                alt="Cartaz do Filme" 
+                                src={getImageUrl(item.backdrop_path)} 
+                                className="w-[100%] lg:h-[550px] h-[350px] object-cover" 
+                            />
 
                             <div className="overlay">
                                 <h3 className='title text-4xl'>{item.title}</h3>

@@ -41,7 +41,12 @@ function SearchPage() {
               <ListResults movies={movies} search={query} />
               :
               <div className="flex flex-col items-center justify-center h-full text-center mt-16">
-                <img src={logo} alt="Logo MoveFlix" width="100px" height="100px" />
+                <img 
+                  src={logo} 
+                  alt="Logo MoveFlix" 
+                  width="100px" 
+                  height="100px" 
+                />
                 <p className="lg:text-2xl text-xl text-gray-400">
                   O que você quer assistir hoje?
                 </p>

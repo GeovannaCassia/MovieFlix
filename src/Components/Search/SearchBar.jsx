@@ -22,6 +22,7 @@ function SearchBar({ query = "", onQueryChange = () => {} }) {
         <div className='flex flex-col md:flex-row items-center md:items-center w-full px-4 gap-3'>
             <img 
                 src={logo} 
+                alt="Logo MovieFlix"
                 className='w-14 md:w-[70px] cursor-pointer' 
                 onClick={() => navigate('/home')}
             />
@@ -44,7 +45,11 @@ function SearchBar({ query = "", onQueryChange = () => {} }) {
                     className='bg-red-600 p-2 rounded-md flex items-center justify-center'
                     onClick={submit}
                 >
-                    <img src={search} className='w-4 h-4' />
+                    <img 
+                        alt="Icone de pesquisa" 
+                        src={search} 
+                        className='w-4 h-4' 
+                    />
                 </button>
             </div>
         </div>

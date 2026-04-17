@@ -42,7 +42,11 @@ function ListAtors({ id }) {
                 >
                     {(ators || []).map((ator) => (
                         <SwiperSlide key={ator.id} className="bg-[#1C1C1C] p-2 rounded-md">
-                            <img src={getImageUrl(ator.profile_path, 'w185')} alt={ator.name} className="mx-auto mb-2"/>
+                            <img 
+                                src={getImageUrl(ator.profile_path, 'w185')} 
+                                alt={ator.name} 
+                                className="mx-auto mb-2"
+                            />
                             <p className="text-md">{ator.name}</p>
                             <p className="text-sm text-gray-400">{ator.character}</p>
                         </SwiperSlide>

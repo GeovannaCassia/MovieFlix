@@ -1,5 +1,5 @@
 import logo from '../Assets/img/Logo_MovieFlix_cortada.png';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Footer() {
     const navigate = useNavigate();
@@ -8,7 +8,12 @@ function Footer() {
         <footer className="bg-zinc-900 text-zinc-400 py-8 mt-10">
             <div className="max-w-6xl mx-auto px-4 flex flex-col gap-6 md:flex-row md:justify-between">
                 <div>
-                    <img src={logo} alt="Logo MovieFlix" width="50px" height="50px" />
+                    <img 
+                        src={logo} 
+                        alt="Logo MovieFlix" 
+                        width="50px" 
+                        height="50px" 
+                    />
                     <h2 className="text-white text-lg font-semibold">MovieFlix</h2>
                     <p className="text-sm">
                         Plataforma de filmes desenvolvida com React e TMDB API.

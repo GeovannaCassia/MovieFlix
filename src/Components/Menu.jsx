@@ -31,7 +31,8 @@ function Menu() {
     return(
         <div className='flex flex-col md:flex-row items-center justify-between w-full px-4 gap-3 lg:mb-2'>
             <img 
-                src={logo} 
+                src={logo}
+                alt="Logo Movie Flix" 
                 className='w-14 md:w-[70px] cursor-pointer' 
                 onClick={() => navigate('/home')} 
             />
@@ -71,7 +72,11 @@ function Menu() {
                     className='bg-red-600 p-2 rounded-md flex items-center justify-center'
                     onClick={() => submit()}
                 >
-                    <img src={search} className='w-4 h-4' />
+                    <img 
+                        alt="]Icone de pesquisa" 
+                        src={search} 
+                        className='w-4 h-4' 
+                    />
                 </button>
             </div>
         </div>

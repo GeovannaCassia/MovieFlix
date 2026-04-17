@@ -12,7 +12,11 @@ function AnimateIntroPage () {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
-                <img src={imgMovie} className="lg:h-[250px] lg:w-[250px] h-[180px] w-[180px]" />
+                <img 
+                    src={imgMovie}
+                    alt="Logo Movie Flix"
+                    className="lg:h-[250px] lg:w-[250px] h-[180px] w-[180px]" 
+                />
             </motion.div>
 
             <motion.div
